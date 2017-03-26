@@ -12,7 +12,7 @@ public:
 
     ~clsA()
     {
-        std::cout << "clsA destructor for Name = " << Name << std::endl;
+        std::cout << "clsA destructor  for Name = " << Name << std::endl;
     }
 
     void printName();
