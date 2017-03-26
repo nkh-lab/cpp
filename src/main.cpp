@@ -6,6 +6,7 @@
 #include "functor.hpp"
 #include "initialyzerlist.hpp"
 #include "virtualdestructor.hpp"
+#include "SmartPointer.hpp"
 
 
 int main(void)
@@ -27,8 +28,8 @@ int main(void)
     //manipulators();
     //testFunctor();
     //initialyzerlist();
-
-    virtualdestructor::test();
+    //virtualdestructor::test();
+    SmartPointer::test();
 
     return 0;
 }
