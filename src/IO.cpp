@@ -4,13 +4,16 @@ namespace IO {
 
 void test(void)
 {
-    std::vector<int> vi = {1,2,3,4,5,6};
+    std::vector<int> vi = {1, 2, 3, 4, 5, 6};
+    std::vector<char> vc = {'a', 'b', 'c', 'd', 'e', 'f'};
 
     std::cout << vi << std::endl;
+    std::cout << vc << std::endl;
 
     /* output:
 
     [1, 2, 3, 4, 5, 6]
+    [a, b, c, d, e, f]
 
      */
 }
