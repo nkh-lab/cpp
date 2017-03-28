@@ -8,6 +8,7 @@
 #include "virtualdestructor.hpp"
 #include "SmartPointer.hpp"
 #include "CopyMoveCtor.hpp"
+#include "IO.hpp"
 
 
 int main(void)
@@ -31,7 +32,9 @@ int main(void)
     //initialyzerlist();
     //virtualdestructor::test();
     //SmartPointer::test();
-    CopyMoveCtor::test();
+    //CopyMoveCtor::test();
+
+    IO::test();
 
     return 0;
 }
