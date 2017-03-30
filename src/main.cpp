@@ -9,6 +9,7 @@
 #include "SmartPointer.hpp"
 #include "CopyMoveCtor.hpp"
 #include "IO.hpp"
+#include "VectorVsList.hpp"
 
 
 int main(void)
@@ -33,8 +34,8 @@ int main(void)
     //virtualdestructor::test();
     //SmartPointer::test();
     //CopyMoveCtor::test();
-
-    IO::test();
+    //IO::test();
+    VectorVsList::test();
 
     return 0;
 }
