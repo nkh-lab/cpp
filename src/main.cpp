@@ -10,6 +10,7 @@
 #include "CopyMoveCtor.hpp"
 #include "IO.hpp"
 #include "VectorVsList.hpp"
+#include "OverloadOperator.hpp"
 
 
 int main(void)
@@ -35,7 +36,8 @@ int main(void)
     //SmartPointer::test();
     //CopyMoveCtor::test();
     //IO::test();
-    VectorVsList::test();
+    //VectorVsList::test();
+    OverloadOperator::test();
 
     return 0;
 }
