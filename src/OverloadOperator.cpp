@@ -4,20 +4,7 @@
 
 namespace OverloadOperator {
 
-class A
-{
-    int storage;
 
-public:
-    // overload operator with Template parameter
-    template<typename T>
-    A& operator << (T p)
-    {
-        std::cout << p;
-
-        return *this;
-    }
-};
 
 
 void test(void)
