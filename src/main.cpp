@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <iostream>
 
+#include "Basic.hpp"
 #include "manipulators.hpp"
 #include "clsA.hpp"
 #include "functor.hpp"
@@ -29,6 +30,9 @@ int main(void)
     delete a2;
     delete a3;
 #endif
+
+    Basic::test();
+
     //manipulators();
     //testFunctor();
     //initialyzerlist();
@@ -37,7 +41,7 @@ int main(void)
     //CopyMoveCtor::test();
     //IO::test();
     //VectorVsList::test();
-    OverloadOperator::test();
+    //OverloadOperator::test();
 
     return 0;
 }
