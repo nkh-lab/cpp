@@ -2,6 +2,7 @@
 #include <iostream>
 
 #include "Basic.hpp"
+#include "PredefinedMacros.hpp"
 #include "manipulators.hpp"
 #include "clsA.hpp"
 #include "functor.hpp"
@@ -31,7 +32,9 @@ int main(void)
     delete a3;
 #endif
 
-    Basic::test();
+    //Basic::test();
+
+    PredefinedMacros::test();
 
     //manipulators();
     //testFunctor();
