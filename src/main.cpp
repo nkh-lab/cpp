@@ -13,6 +13,7 @@
 #include "IO.hpp"
 #include "VectorVsList.hpp"
 #include "OverloadOperator.hpp"
+#include "Macros.hpp"
 
 
 int main(void)
@@ -34,7 +35,7 @@ int main(void)
 
     //Basic::test();
 
-    PredefinedMacros::test();
+    //PredefinedMacros::test();
 
     //manipulators();
     //testFunctor();
@@ -45,6 +46,8 @@ int main(void)
     //IO::test();
     //VectorVsList::test();
     //OverloadOperator::test();
+
+    Macros::test();
 
     return 0;
 }
