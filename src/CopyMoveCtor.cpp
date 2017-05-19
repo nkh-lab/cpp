@@ -7,13 +7,15 @@ namespace CopyMoveCtor {
 
 class A
 {
-    int* i = new(int);
+    int* i;
 
 public:
     int get_i(){return *i;}
 
     A(int i_i)
     {
+        i = new(int);
+
         *i = i_i;
 
         std::cout << this << " Plain Constructor, *i = " << *i << ", i = " << i << std::endl;
@@ -21,6 +23,8 @@ public:
 
     A(A& c)
     {
+        i = new(int);
+
         *i = *c.i;
 
         std::cout << this << " Copy  Constructor, *i = " << *i << ", i = " << i << std::endl;
@@ -85,25 +89,25 @@ void test(void)
     d = c;           // Copy Assigment
     d = std::move(e);// Move Assigment
 
-    /* output:
+    /* Output:
 
-    0x7ffd05d35250 Plain Constructor, *i = 1, i = 0x2160010
-    0x7ffd05d35260 Copy  Constructor, *i = 1, i = 0x2160030
-    0x7ffd05d35270 Plain Constructor, *i = 2, i = 0x2160050
-    0x7ffd05d35280 Move  Constructor, *i = 2, i = 0x2160050
+    0x7ffd9f29cf10 Plain Constructor, *i = 1, i = 0x2249c30
+    0x7ffd9f29cf20 Copy  Constructor, *i = 1, i = 0x2249c50
+    0x7ffd9f29cf30 Plain Constructor, *i = 2, i = 0x2249c70
+    0x7ffd9f29cf40 Move  Constructor, *i = 2, i = 0x2249c70
     2
-    0x7ffd05d35290 Plain Constructor, *i = 3, i = 0x2160090
-    0x7ffd05d352a0 Plain Constructor, *i = 4, i = 0x21600b0
-    0x7ffd05d352b0 Plain Constructor, *i = 5, i = 0x21600d0
-    0x7ffd05d352a0 Copy Assigment Operator, *i = 3, i = 0x21600b0
-    0x7ffd05d352a0 Move Assigment Operator, *i = 5, i = 0x21600d0
-    0x7ffd05d352b0 Destructor, *i = 5, i = 0x21600d0
-    0x7ffd05d352a0 Destructor, *i = 5, i = 0x21600d0
-    0x7ffd05d35290 Destructor, *i = 3, i = 0x2160090
-    0x7ffd05d35280 Destructor, *i = 2, i = 0x2160050
-    0x7ffd05d35270 Destructor, *i = 2, i = 0x2160050
-    0x7ffd05d35260 Destructor, *i = 1, i = 0x2160030
-    0x7ffd05d35250 Destructor, *i = 1, i = 0x2160010
+    0x7ffd9f29cf50 Plain Constructor, *i = 3, i = 0x2249c90
+    0x7ffd9f29cf60 Plain Constructor, *i = 4, i = 0x2249cb0
+    0x7ffd9f29cf70 Plain Constructor, *i = 5, i = 0x2249cd0
+    0x7ffd9f29cf60 Copy Assigment Operator, *i = 3, i = 0x2249cb0
+    0x7ffd9f29cf60 Move Assigment Operator, *i = 5, i = 0x2249cd0
+    0x7ffd9f29cf70 Destructor, *i = 5, i = 0x2249cd0
+    0x7ffd9f29cf60 Destructor, *i = 5, i = 0x2249cd0
+    0x7ffd9f29cf50 Destructor, *i = 3, i = 0x2249c90
+    0x7ffd9f29cf40 Destructor, *i = 2, i = 0x2249c70
+    0x7ffd9f29cf30 Destructor, *i = 2, i = 0x2249c70
+    0x7ffd9f29cf20 Destructor, *i = 1, i = 0x2249c50
+    0x7ffd9f29cf10 Destructor, *i = 1, i = 0x2249c30
 
      */
 }
