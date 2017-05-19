@@ -1,20 +1,6 @@
 #include <stdio.h>
 #include <iostream>
-
-#include "Basic.hpp"
-#include "PredefinedMacros.hpp"
-#include "manipulators.hpp"
-#include "clsA.hpp"
-#include "functor.hpp"
-#include "initialyzerlist.hpp"
-#include "virtualdestructor.hpp"
-#include "SmartPointer.hpp"
-#include "CopyMoveCtor.hpp"
-#include "IO.hpp"
-#include "VectorVsList.hpp"
-#include "OverloadOperator.hpp"
-#include "Macros.hpp"
-
+#include "main.hpp"
 
 int main(void)
 {
@@ -46,8 +32,9 @@ int main(void)
     //IO::test();
     //VectorVsList::test();
     //OverloadOperator::test();
+    //Macros::test();
 
-    Macros::test();
+    Containers::test();
 
     return 0;
 }
