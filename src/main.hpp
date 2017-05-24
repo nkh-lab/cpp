@@ -15,5 +15,6 @@
 #include "OverloadOperator.hpp"
 #include "Macros.hpp"
 #include "Containers.hpp"
+#include "Tricks.hpp"
 
 #endif

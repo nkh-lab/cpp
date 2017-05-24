@@ -33,8 +33,9 @@ int main(void)
     //VectorVsList::test();
     //OverloadOperator::test();
     //Macros::test();
+    //Containers::test();
 
-    Containers::test();
+    Tricks::test();
 
     return 0;
 }
