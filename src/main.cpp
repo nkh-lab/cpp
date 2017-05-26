@@ -19,7 +19,7 @@ int main(void)
     delete a3;
 #endif
 
-    //Basic::test();
+    Basic::test();
 
     //PredefinedMacros::test();
 
@@ -35,7 +35,7 @@ int main(void)
     //Macros::test();
     //Containers::test();
 
-    Tricks::test();
+    //Tricks::test();
 
     return 0;
 }
