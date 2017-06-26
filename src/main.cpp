@@ -19,7 +19,7 @@ int main(void)
     delete a3;
 #endif
 
-    Basic::test();
+    //Basic::test();
 
     //PredefinedMacros::test();
 
@@ -34,8 +34,9 @@ int main(void)
     //OverloadOperator::test();
     //Macros::test();
     //Containers::test();
-
     //Tricks::test();
+
+    Promise::test();
 
     return 0;
 }

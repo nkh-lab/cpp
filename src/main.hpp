@@ -16,5 +16,6 @@
 #include "Macros.hpp"
 #include "Containers.hpp"
 #include "Tricks.hpp"
+#include "Promise.hpp"
 
 #endif
