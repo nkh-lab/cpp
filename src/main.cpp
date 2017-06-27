@@ -35,8 +35,9 @@ int main(void)
     //Macros::test();
     //Containers::test();
     //Tricks::test();
+    //Promise::test();
 
-    Promise::test();
+    Function::test();
 
     return 0;
 }

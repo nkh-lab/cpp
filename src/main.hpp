@@ -17,5 +17,6 @@
 #include "Containers.hpp"
 #include "Tricks.hpp"
 #include "Promise.hpp"
+#include "Function.hpp"
 
 #endif
