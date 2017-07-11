@@ -5,6 +5,34 @@
 
 namespace Function {
 
+class CbProvider
+{
+public:
+    CbProvider() {}
+
+    std::function<void(std::string)> cb;
+
+    void activateCB(std::string reason)
+    {
+        if (cb != nullptr) cb(reason);
+    }
+};
+
+class CbHandler
+{
+public:
+    CbHandler(CbProvider& p)
+    {
+        using namespace std::placeholders;
+        p.cb = std::bind(&CbHandler::onCB, this, _1);
+    }
+
+    void onCB(std::string s)
+    {
+        std::cout << "onCB s = " << s << std::endl;
+    }
+};
+
 void test(void)
 {
     std::function<void()> f1 = [] (){std::cout << "Hello from target1" << std::endl;};
@@ -31,6 +59,22 @@ void test(void)
       what():  bad_function_call
     The program has unexpectedly finished.
     /.../cpp crashed.
+
+    */
+
+    // Test bind
+
+    CbProvider provider;
+
+    CbHandler handler(provider);
+
+    provider.activateCB("Send CB#1");
+    provider.activateCB("Send CB#2");
+
+    /* Output:
+
+    onCB s = Send CB#1
+    onCB s = Send CB#2
 
     */
 }
