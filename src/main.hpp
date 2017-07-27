@@ -18,5 +18,6 @@
 #include "Tricks.hpp"
 #include "Promise.hpp"
 #include "Function.hpp"
+#include "Events.hpp"
 
 #endif

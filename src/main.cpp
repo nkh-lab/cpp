@@ -37,7 +37,9 @@ int main(void)
     //Tricks::test();
     //Promise::test();
 
-    Function::test();
+    //Function::test();
+
+    Events::test();
 
     return 0;
 }
