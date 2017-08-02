@@ -19,5 +19,6 @@
 #include "Promise.hpp"
 #include "Function.hpp"
 #include "Events.hpp"
+#include "Str.hpp"
 
 #endif

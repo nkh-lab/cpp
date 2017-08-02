@@ -36,10 +36,9 @@ int main(void)
     //Containers::test();
     //Tricks::test();
     //Promise::test();
-
     //Function::test();
-
-    Events::test();
+    //Events::test();
+    Str::test();
 
     return 0;
 }
