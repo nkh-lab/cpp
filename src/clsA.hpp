@@ -8,6 +8,7 @@ class clsA
     char* Name;
 
 public:
+    clsA();
     clsA(char* name);
 
     ~clsA()
