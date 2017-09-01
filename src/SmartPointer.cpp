@@ -30,7 +30,10 @@ void test(void)
     // constructor with no managed object
     std::unique_ptr<clsA> upANoM;
 
-    if(upANoM == nullptr) upANoM->testInline();
+    if(upANoM == nullptr)
+    {
+        upANoM->testInline();
+    }
 
     /* output:
 
@@ -38,6 +41,7 @@ void test(void)
 
     */
     // ! No constructor and destructor call but method could be called
+    // but not members, e.g. upANoM->I
 }
 
 }

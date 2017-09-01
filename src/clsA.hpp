@@ -22,6 +22,8 @@ public:
     {
         std::cout << "clsA testInline()" <<std::endl;
     }
+
+    int I = 123;
 };
 
 
