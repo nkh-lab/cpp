@@ -33,12 +33,12 @@ int main(void)
     //VectorVsList::test();
     //OverloadOperator::test();
     //Macros::test();
-    //Containers::test();
+    Containers::test();
     //Tricks::test();
     //Promise::test();
     //Function::test();
     //Events::test();
-    Str::test();
+    //Str::test();
 
     return 0;
 }
