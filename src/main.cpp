@@ -27,13 +27,13 @@ int main(void)
     //testFunctor();
     //initialyzerlist();
     //virtualdestructor::test();
-    //SmartPointer::test();
+    SmartPointer::test();
     //CopyMoveCtor::test();
     //IO::test();
     //VectorVsList::test();
     //OverloadOperator::test();
     //Macros::test();
-    Containers::test();
+    //Containers::test();
     //Tricks::test();
     //Promise::test();
     //Function::test();

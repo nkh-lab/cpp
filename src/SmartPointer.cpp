@@ -4,7 +4,16 @@
 
 namespace SmartPointer {
 
+void test_constructors(void);
+void test_uptr(void);
+
 void test(void)
+{
+    //test_constructors();
+    test_uptr();
+}
+
+void test_constructors(void)
 {
     // constructor with managed object
     {
@@ -42,6 +51,36 @@ void test(void)
     */
     // ! No constructor and destructor call but method could be called
     // but not members, e.g. upANoM->I
+}
+
+typedef std::unique_ptr<int> upiType;
+
+void test_uptr_copy(upiType p)
+{
+    std::cout << "*p = " << *p << std::endl;
+}
+
+void test_uptr_ref(const upiType& p)
+{
+    std::cout << "*p = " << *p << std::endl;
+}
+
+void test_uptr(void)
+{
+    std::unique_ptr<int> up1(new int(111));
+    std::unique_ptr<int> up2;
+
+    up2 = std::unique_ptr<int>(new int(222));
+
+    std::cout << "*up1 = " << *up1 << std::endl;
+    std::cout << "*up2 = " << *up2 << std::endl;
+
+    test_uptr_ref(up1);
+    std::cout << "*up1 = " << *up1 << std::endl;
+
+    /* ! Not allowed !
+    test_uptr_copy(up1);
+    */
 }
 
 }
