@@ -18,7 +18,7 @@
 #include "Tricks.hpp"
 #include "Promise.hpp"
 #include "Function.hpp"
-#include "Events.hpp"
+#include "EventsTester.hpp"
 #include "Str.hpp"
 
 #endif

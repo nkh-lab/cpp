@@ -37,8 +37,8 @@ int main(void)
     //Tricks::test();
     //Promise::test();
     //Function::test();
-    //Events::test();
-    Str::test();
+    EventsTester::test();
+    //Str::test();
 
     return 0;
 }

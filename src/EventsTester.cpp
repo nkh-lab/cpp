@@ -1,68 +1,21 @@
 #include <iostream>
-#include <functional>
-#include <map>
-#include <algorithm>
-#include <string>
-#include <cstdlib>
 #include "Events.hpp"
+#include "EventsTester.hpp"
 
-namespace Events {
+using namespace Events;
 
-template <typename E>
-class Event
-{
-public:
-    typedef std::function<void(const E&)> THandler;
-
-    int subscribe(const THandler& handler)
-    {
-        int handlerID = generateHandlerID(mHandlers);
-
-        mHandlers.insert( std::pair<int /*handlerID*/, THandler>(handlerID, handler));
-
-        return handlerID;
-    }
-
-    void unsubscribe(const int& handlerID)
-    {
-        mHandlers.erase(handlerID);
-    }
-
-    void rise(E val)
-    {
-        for(auto it = mHandlers.begin(); it != mHandlers.end(); ++it)
-        {
-            it->second(val);
-        }
-    }
-
-private:
-    std::map<int /*handlerID*/, THandler> mHandlers;
-
-    template <typename M>
-    int generateHandlerID(const M& m)
-    {
-        int ret;
-
-        do
-        {
-            ret = rand();
-
-        }while(ret == 0 || m.find(ret) != m.end());
-
-        return ret;
-    }
-};
-
+namespace EventsTester {
 
 class Provider
 {
 public:
-    Event<int> EventInt;
-    Event<std::string> EventString;
-    Event<bool> EventBool;
-};
+    Event<UnsafeSyncPolicy, int> EventInt;
+    Event<UnsafeSyncPolicy, std::string> EventString;
+    Event<UnsafeSyncPolicy, bool> EventBool;
 
+    Event<UnsafeSyncPolicy, int, std::string> EventIntString;
+    Event<SafeSyncPolicy> EventVoid;
+};
 
 class Consumer
 {
@@ -76,6 +29,7 @@ public:
 
         mProvider.EventString.subscribe([this](const std::string& val)
         {
+
             std::cout << __FUNCTION__ << ": " << mName << " string = " << val << std::endl;
         }
         );
@@ -83,6 +37,18 @@ public:
         mProvider.EventBool.subscribe([this](const bool& val)
         {
             std::cout << __FUNCTION__ << ": " << mName << " bool = " << val << std::endl;
+        }
+        );
+
+        mProvider.EventIntString.subscribe([this](const int& valInt, const std::string& valStr)
+        {
+            std::cout << __FUNCTION__ << ": " << mName << " int = " << valInt << ", string = " << valStr << std::endl;
+        }
+        );
+
+        mProvider.EventVoid.subscribe([this]()
+        {
+            std::cout << __FUNCTION__ << ": " << mName << " void " << std::endl;
         }
         );
     }
@@ -118,19 +84,26 @@ void test()
     p.EventString.rise("string test");
     p.EventBool.rise(false);
 
+
+    p.EventIntString.rise(777, "int and string test");
+    p.EventVoid.rise();
+
     /* Output:
 
     Consumer2 Consumer::onEventInt() val = 1
     Consumer1 Consumer::onEventInt() val = 1
     Consumer2 Consumer::onEventInt() val = 2
     Consumer2 Consumer::onEventInt() val = 3
-    operator(): Consumer1 string = string test
     operator(): Consumer2 string = string test
+    operator(): Consumer1 string = string test
     operator(): Consumer2 bool = 0
     operator(): Consumer1 bool = 0
+    operator(): Consumer2 int = 777, string = int and string test
+    operator(): Consumer1 int = 777, string = int and string test
+    operator(): Consumer2 void
+    operator(): Consumer1 void
 
      */
 }
-
 
 }
