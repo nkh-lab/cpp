@@ -23,7 +23,10 @@ class VoidClass
  */
 class UnsafeSyncPolicy
 {
-public:
+    template <typename TSyncPolicy, typename... TEvtArgs>
+    friend class Event;
+
+private:
     typedef VoidClass Locker_t;
 
     UnsafeSyncPolicy(Locker_t& locker) {}
@@ -35,7 +38,10 @@ public:
  */
 class SafeSyncPolicy
 {
-public:
+    template <typename TSyncPolicy, typename... TEvtArgs>
+    friend class Event;
+
+private:
     typedef std::mutex Locker_t;
 
     SafeSyncPolicy(Locker_t& locker): mLocker(locker)
@@ -48,7 +54,6 @@ public:
         mLocker.unlock();
     }
 
-private:
     Locker_t&  mLocker;
 };
 
