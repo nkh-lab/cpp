@@ -1,5 +1,5 @@
 #include <memory>
-
+#include "SmartPointer.hpp"
 #include "clsA.hpp"
 
 namespace SmartPointer {

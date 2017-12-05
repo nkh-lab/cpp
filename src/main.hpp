@@ -9,6 +9,7 @@
 #include "initialyzerlist.hpp"
 #include "virtualdestructor.hpp"
 #include "SmartPointer.hpp"
+#include "WeakPointer.hpp"
 #include "CopyMoveCtor.hpp"
 #include "IO.hpp"
 #include "VectorVsList.hpp"

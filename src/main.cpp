@@ -28,6 +28,7 @@ int main(void)
     //initialyzerlist();
     //virtualdestructor::test();
     //SmartPointer::test();
+    WeakPointer::test();
     //CopyMoveCtor::test();
     //IO::test();
     //VectorVsList::test();
@@ -37,7 +38,7 @@ int main(void)
     //Tricks::test();
     //Promise::test();
     //Function::test();
-    EventsTester::test();
+    //EventsTester::test();
     //Str::test();
 
     return 0;
