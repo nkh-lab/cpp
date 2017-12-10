@@ -15,7 +15,13 @@ file(GLOB srcFiles
 )
 
 # show in cmake log
-message("Detected source files: " ${srcFiles})
+#message("Detected source files: " ${srcFiles})
 
 add_executable(cpp ${srcFiles})
 
+target_link_libraries(cpp uuid)
+
+# ****** NOTES ******:
+
+# UUID:
+# for Ubuntu: sudo apt-get install uuid-dev

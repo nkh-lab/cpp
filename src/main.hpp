@@ -21,5 +21,6 @@
 #include "Function.hpp"
 #include "EventsTester.hpp"
 #include "Str.hpp"
+#include "UID.hpp"
 
 #endif

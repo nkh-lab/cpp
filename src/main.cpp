@@ -28,7 +28,7 @@ int main(void)
     //initialyzerlist();
     //virtualdestructor::test();
     //SmartPointer::test();
-    WeakPointer::test();
+    //WeakPointer::test();
     //CopyMoveCtor::test();
     //IO::test();
     //VectorVsList::test();
@@ -40,6 +40,7 @@ int main(void)
     //Function::test();
     //EventsTester::test();
     //Str::test();
+    UID::test();
 
     return 0;
 }
