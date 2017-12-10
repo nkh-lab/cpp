@@ -14,7 +14,12 @@ namespace Events {
  */
 class VoidClass
 {
+    friend class UnsafeSyncPolicy;
+    template <typename TSyncPolicy, typename... TEvtArgs>
+    friend class Event;
 
+private:
+    VoidClass(){}
 };
 
 /**
