@@ -38,7 +38,6 @@ int main(void)
     //Tricks::test();
     //Promise::test();
     //Function::test();
-    //EventsTester::test();
     //Str::test();
     UID::test();
 

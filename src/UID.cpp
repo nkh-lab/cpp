@@ -1,6 +1,8 @@
 #include <iostream>
 #include "uuid/uuid.h"
-
+/*
+ * ! For Ubuntu: sudo apt-get install uuid-dev
+ */
 namespace UID {
 
 void test(void)
