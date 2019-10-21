@@ -39,7 +39,8 @@ int main(void)
     //Promise::test();
     //Function::test();
     //Str::test();
-    UID::test();
+    //UID::test();
+    Literals::test();
 
     return 0;
 }

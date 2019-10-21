@@ -1,5 +1,10 @@
 #include <iostream>
+
+#include "UID.hpp"
+
+#if UID_TEST_ENABLED == 1
 #include "uuid/uuid.h"
+
 /*
  * ! For Ubuntu: sudo apt-get install uuid-dev
  */
@@ -22,5 +27,5 @@ void test(void)
 
     */
 }
-
 }
+#endif

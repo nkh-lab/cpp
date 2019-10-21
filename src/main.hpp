@@ -21,5 +21,6 @@
 #include "Function.hpp"
 #include "Str.hpp"
 #include "UID.hpp"
+#include "Literals.h"
 
 #endif

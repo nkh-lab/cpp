@@ -17,4 +17,4 @@ file(GLOB srcFiles
 
 add_executable(cpp ${srcFiles})
 
-target_link_libraries(cpp uuid)
+#target_link_libraries(cpp uuid)
