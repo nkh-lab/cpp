@@ -34,19 +34,20 @@ size_t operator""_brt(const char* s)
  * Since C++14
  */
 template<char... bits>
-struct Binary;
+class Binary;
 
 template<char high_bit, char... bits>
-struct Binary<high_bit, bits...>
+class Binary<high_bit, bits...>
 {
     static constexpr auto numBits = sizeof... (bits);
-
+public:
     static constexpr size_t value = (high_bit - '0') << numBits | Binary<bits...>::value;
 };
 
 template<char high_bit>
-struct Binary<high_bit>
+class Binary<high_bit>
 {
+public:
     static constexpr size_t value = (high_bit - '0');
 };
 
