@@ -7,12 +7,26 @@
 /*                         Standard Container Summary
  *
  *********************************************************************************
- *       * Sequence containers *
+ *      * Sequence containers *
  *
- * vector<T>                A variable-size vector.
- * list<T>                  A doubly-linked list.
- * forward_list<T>          A singly-linked list
- * deque<T>                 A double-ended queue.
+ *  * Fundamental:
+ *
+ * vector<T>                A variable-size vector. Indexed container, random access - O(1), add/rem at the end - O(1) in other - O(n).
+ * list<T>                  A doubly-linked list. Allows bidirectional iteration. Constant time insertion and removal.
+ * deque<T>                 A double-ended queue. Indexed container, fast insertion and deletion in beggining and end.
+ *
+ *  * Adapters:
+ *
+ * stack<T>                 LIFO, based on std::deque<T>. push(), pop(), top()
+ * queue<T>                 FIFO, based on std::deque<T>. push(), pop(), front()
+ *
+ *  * Others:
+ *
+ * forward_list<T>          A singly-linked list. Fast insertion and removal of elements
+ *                          from anywhere in the container. More space efficient storage when
+ *                          bidirectional iteration is not needed.
+ *
+ *  array<T,N>              Indexed container with fixed size.
  *
  *********************************************************************************
  *       * Associative  containers *

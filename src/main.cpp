@@ -40,7 +40,8 @@ int main(void)
     //Function::test();
     //Str::test();
     //UID::test();
-    Literals::test();
+    //Literals::test();
+    SyncQueue::test();
 
     return 0;
 }
