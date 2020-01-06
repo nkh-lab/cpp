@@ -23,5 +23,6 @@
 #include "UID.hpp"
 #include "Literals.hpp"
 #include "SyncQueue.hpp"
+#include "MyForwardList.hpp"
 
 #endif

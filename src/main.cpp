@@ -41,7 +41,8 @@ int main(void)
     //Str::test();
     //UID::test();
     //Literals::test();
-    SyncQueue::test();
+    //SyncQueue::test();
+    MyForwardList::test();
 
     return 0;
 }
