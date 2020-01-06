@@ -1,20 +1,21 @@
 cmake_minimum_required(VERSION 2.8)
 
-# FLAGS:
-# -std=c++11    - c++11 support
-# -Wall         - all warnings
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread -std=c++14 -Wall")
+set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall")
 
-# project name e.g. for qt-creator
-project(Cpp)
+#message("CMAKE_CXX_FLAGS:" ${CMAKE_CXX_FLAGS})
+
+project(cpp)
 
 file(GLOB srcFiles
     "src/*.cpp"
     "src/*.hpp")
 
-# show in cmake log
-#message("Detected source files: " ${srcFiles})
+add_executable(${PROJECT_NAME} ${srcFiles})
 
-add_executable(cpp ${srcFiles})
-
-#target_link_libraries(cpp uuid)
+find_package (Threads)
+target_link_libraries (${PROJECT_NAME} ${CMAKE_THREAD_LIBS_INIT})
+# add if is used:
+# uuid)

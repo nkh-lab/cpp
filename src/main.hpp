@@ -21,7 +21,7 @@
 #include "Function.hpp"
 #include "Str.hpp"
 #include "UID.hpp"
-#include "Literals.h"
-#include "SyncQueue.h"
+#include "Literals.hpp"
+#include "SyncQueue.hpp"
 
 #endif

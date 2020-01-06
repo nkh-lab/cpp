@@ -1,4 +1,4 @@
-#include "SyncQueue.h"
+#include "SyncQueue.hpp"
 
 #include <queue>
 #include <mutex>
