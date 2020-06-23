@@ -25,5 +25,6 @@
 #include "SyncQueue.hpp"
 #include "MyForwardList.hpp"
 #include "Runnable.hpp"
+#include "Pimpl.hpp"
 
 #endif

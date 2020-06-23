@@ -43,7 +43,8 @@ int main(void)
     //Literals::test();
     //SyncQueue::test();
     //MyForwardList::test();
-    Runnable::test();
+    //Runnable::test();
+    Pimpl::test();
 
     return 0;
 }
