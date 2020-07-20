@@ -4,7 +4,6 @@
 namespace Containers {
 
 void test(void);
-
 }
 
 #endif

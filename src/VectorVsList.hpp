@@ -4,6 +4,5 @@
 namespace VectorVsList {
 
 void test(void);
-
 }
 #endif

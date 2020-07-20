@@ -3,5 +3,4 @@
 namespace Pimpl {
 
 void test();
-
 }

@@ -29,16 +29,12 @@ private:
 class PimplImpl
 {
 public:
-    void method()
-    {
-        std::cout << __PRETTY_FUNCTION__ << std::endl;
-    }
+    void method() { std::cout << __PRETTY_FUNCTION__ << std::endl; }
 };
 
 Pimpl::Pimpl()
     : m_impl{std::make_unique<PimplImpl>()}
 {
-
 }
 
 void Pimpl::method()
@@ -53,4 +49,4 @@ void test()
     Pimpl().method();
 }
 
-}
+} // namespace Pimpl

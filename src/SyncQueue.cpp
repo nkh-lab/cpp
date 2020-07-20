@@ -1,15 +1,15 @@
 #include "SyncQueue.hpp"
 
-#include <queue>
-#include <mutex>
-#include <condition_variable>
-#include <thread>
 #include <chrono>
+#include <condition_variable>
 #include <iostream>
+#include <mutex>
+#include <queue>
+#include <thread>
 
 namespace SyncQueue {
 
-template<typename T>
+template <typename T>
 class SyncQueue
 {
     std::queue<T> m_Que;
@@ -33,7 +33,7 @@ public:
         {
             m_ConVar.wait(lock);
 
-        } while(m_Que.size() == 0); // extra check from spontaneous notifications
+        } while (m_Que.size() == 0); // extra check from spontaneous notifications
 
         auto ret = m_Que.front();
         m_Que.pop();
@@ -48,18 +48,16 @@ void test()
 
     SyncQueue<int> sq;
 
-    std::thread consumer([&sq]()
-    {
+    std::thread consumer([&sq]() {
         std::cout << "consumer" << std::endl;
 
-        for(;;)
+        for (;;)
         {
             std::cout << sq.deque() << std::endl;
         }
     });
 
-    std::thread provider([&sq]()
-    {
+    std::thread provider([&sq]() {
         std::this_thread::sleep_for(1s);
         sq.enque(1);
         std::this_thread::sleep_for(3s);
@@ -71,4 +69,4 @@ void test()
     consumer.join();
 }
 
-}
+} // namespace SyncQueue

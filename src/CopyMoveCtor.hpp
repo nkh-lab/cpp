@@ -4,7 +4,6 @@
 namespace CopyMoveCtor {
 
 void test(void);
-
 }
 
 #endif

@@ -11,20 +11,13 @@ public:
     clsA();
     clsA(char* name);
 
-    ~clsA()
-    {
-        std::cout << "clsA destructor  for Name = " << Name << std::endl;
-    }
+    ~clsA() { std::cout << "clsA destructor  for Name = " << Name << std::endl; }
 
     void printName();
 
-    inline void testInline(void)
-    {
-        std::cout << "clsA testInline()" <<std::endl;
-    }
+    inline void testInline(void) { std::cout << "clsA testInline()" << std::endl; }
 
     int I = 123;
 };
-
 
 #endif

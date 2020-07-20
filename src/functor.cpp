@@ -7,14 +7,13 @@ class clsSimpleFunctor
     char* Name;
 
 public:
-    clsSimpleFunctor(char* name): Name(name) {}
-
-    void operator()()
+    clsSimpleFunctor(char* name)
+        : Name(name)
     {
-        std::cout << Name << std::endl;
     }
-};
 
+    void operator()() { std::cout << Name << std::endl; }
+};
 
 void testFunctor()
 {

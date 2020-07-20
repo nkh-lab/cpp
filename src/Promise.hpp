@@ -4,7 +4,6 @@
 namespace Promise {
 
 void test(void);
-
 }
 
 #endif

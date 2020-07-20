@@ -4,6 +4,5 @@
 namespace SmartPointer {
 
 void test(void);
-
 }
 #endif

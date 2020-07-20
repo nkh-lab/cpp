@@ -4,7 +4,6 @@
 namespace Literals {
 
 void test(void);
-
 }
 
 #endif // LITERALS_H

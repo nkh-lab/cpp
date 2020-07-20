@@ -4,7 +4,6 @@
 namespace Str {
 
 void test(void);
-
 }
 
 #endif

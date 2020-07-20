@@ -1,12 +1,12 @@
 #include "IO.hpp"
 
-template<typename T>
-std::ostream& operator<< (std::ostream& out, const std::vector<T>& v)
+template <typename T>
+std::ostream& operator<<(std::ostream& out, const std::vector<T>& v)
 {
     out << "[";
     size_t last = v.size() - 1;
 
-    for(size_t i = 0; i < v.size(); ++i)
+    for (size_t i = 0; i < v.size(); ++i)
     {
         out << v[i];
         if (i != last) out << ", ";
@@ -14,7 +14,6 @@ std::ostream& operator<< (std::ostream& out, const std::vector<T>& v)
     out << "]";
     return out;
 }
-
 
 namespace IO {
 
@@ -38,7 +37,4 @@ void test(void)
  *  Overload output stream operator for vector<T>
  */
 
-
-}// namespace IO
-
-
+} // namespace IO

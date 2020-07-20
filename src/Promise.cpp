@@ -1,8 +1,8 @@
-#include <iostream>
-#include <future>
-#include <thread>
-#include <chrono>
 #include "Promise.hpp"
+#include <chrono>
+#include <future>
+#include <iostream>
+#include <thread>
 
 namespace Promise {
 
@@ -12,7 +12,6 @@ void p_loop(std::promise<bool> p, int delayInSec)
 
     p.set_value(true);
 }
-
 
 void test(void)
 {
@@ -28,7 +27,7 @@ void test(void)
     std::thread t2(p_loop, std::move(p2), 10);
 
     auto f2_status = f2.wait_for(std::chrono::seconds(1));
-    auto f1_status = f1.wait_for(std::chrono::seconds(20));//f1.wait();
+    auto f1_status = f1.wait_for(std::chrono::seconds(20)); // f1.wait();
 
     if (f1_status == std::future_status::ready)
     {
@@ -36,7 +35,8 @@ void test(void)
     }
     else if (f1_status == std::future_status::timeout)
     {
-        std::cout << "Promise #1 ended with Status = " << "timeout" << std::endl;
+        std::cout << "Promise #1 ended with Status = "
+                  << "timeout" << std::endl;
     }
 
     if (f2_status == std::future_status::ready)
@@ -45,7 +45,8 @@ void test(void)
     }
     else if (f2_status == std::future_status::timeout)
     {
-        std::cout << "Promise #2 ended with Status = " << "timeout" << std::endl;
+        std::cout << "Promise #2 ended with Status = "
+                  << "timeout" << std::endl;
     }
 
     t1.join();
@@ -60,4 +61,4 @@ void test(void)
      */
 }
 
-}
+} // namespace Promise

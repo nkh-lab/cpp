@@ -1,6 +1,6 @@
-#include <stdio.h>
-#include <iostream>
 #include "main.hpp"
+#include <iostream>
+#include <stdio.h>
 
 int main(void)
 {
@@ -19,34 +19,32 @@ int main(void)
     delete a3;
 #endif
 
-    //Basic::test();
+    // Basic::test();
 
-    //PredefinedMacros::test();
+    // PredefinedMacros::test();
 
-    //manipulators();
-    //testFunctor();
-    //initialyzerlist();
-    //virtualdestructor::test();
-    //SmartPointer::test();
-    //WeakPointer::test();
-    //CopyMoveCtor::test();
-    //IO::test();
-    //VectorVsList::test();
-    //OverloadOperator::test();
-    //Macros::test();
-    //Containers::test();
-    //Tricks::test();
-    //Promise::test();
-    //Function::test();
-    //Str::test();
-    //UID::test();
-    //Literals::test();
-    //SyncQueue::test();
-    //MyForwardList::test();
-    //Runnable::test();
+    // manipulators();
+    // testFunctor();
+    // initialyzerlist();
+    // virtualdestructor::test();
+    // SmartPointer::test();
+    // WeakPointer::test();
+    // CopyMoveCtor::test();
+    // IO::test();
+    // VectorVsList::test();
+    // OverloadOperator::test();
+    // Macros::test();
+    // Containers::test();
+    // Tricks::test();
+    // Promise::test();
+    // Function::test();
+    // Str::test();
+    // UID::test();
+    // Literals::test();
+    // SyncQueue::test();
+    // MyForwardList::test();
+    // Runnable::test();
     Pimpl::test();
 
     return 0;
 }
-
-

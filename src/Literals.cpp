@@ -1,7 +1,7 @@
 #include "Literals.hpp"
 
-#include <cstring>
 #include <cassert>
+#include <cstring>
 #include <iostream>
 
 namespace Literals {
@@ -16,13 +16,13 @@ size_t operator""_brt(const char* s)
     size_t numBits = std::strlen(s);
     size_t value{0};
 
-    for(size_t i = 0; i < numBits; ++i)
+    for (size_t i = 0; i < numBits; ++i)
     {
         const char& c = s[numBits - 1 - i];
 
-        assert ((c == '1' || c == '0'));
+        assert((c == '1' || c == '0'));
 
-        if(c == '1') value += 1 << i;
+        if (c == '1') value += 1 << i;
     }
 
     return value;
@@ -33,25 +33,26 @@ size_t operator""_brt(const char* s)
  *
  * Since C++14
  */
-template<char... bits>
+template <char... bits>
 class Binary;
 
-template<char high_bit, char... bits>
+template <char high_bit, char... bits>
 class Binary<high_bit, bits...>
 {
-    static constexpr auto numBits = sizeof... (bits);
+    static constexpr auto numBits = sizeof...(bits);
+
 public:
     static constexpr size_t value = (high_bit - '0') << numBits | Binary<bits...>::value;
 };
 
-template<char high_bit>
+template <char high_bit>
 class Binary<high_bit>
 {
 public:
     static constexpr size_t value = (high_bit - '0');
 };
 
-template<char... bits>
+template <char... bits>
 constexpr unsigned int operator""_bct()
 {
     return Binary<bits...>::value;
@@ -66,4 +67,4 @@ void test(void)
     std::cout << 110_bct << std::endl;
 }
 
-}
+} // namespace Literals

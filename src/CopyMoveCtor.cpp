@@ -10,16 +10,13 @@ class A
     int* i = nullptr;
 
 public:
-    int get_i(){return *i;}
+    int get_i() { return *i; }
 
-    A()
-    {
-        std::cout << this << " Default Constructor, i = NULL" << std::endl;
-    }
+    A() { std::cout << this << " Default Constructor, i = NULL" << std::endl; }
 
     A(int i_i)
     {
-        i = new(int);
+        i = new (int);
 
         *i = i_i;
 
@@ -28,7 +25,7 @@ public:
 
     A(A& c)
     {
-        i = new(int);
+        i = new (int);
 
         *i = *c.i;
 
@@ -37,11 +34,11 @@ public:
 
     A(A&& m)
     {
-        i = m.i;// or i = std::move(m.i) for non pointers
+        i = m.i; // or i = std::move(m.i) for non pointers
 
         std::cout << this << " Move  Constructor, *i = " << *i << ", i = " << i << std::endl;
 
-        m.i = nullptr;// to avoid double deleting in destrctor
+        m.i = nullptr; // to avoid double deleting in destrctor
     }
 
     ~A()
@@ -49,7 +46,7 @@ public:
         if (i != nullptr)
         {
             std::cout << this << " Destructor, *i = " << *i << ", i = " << i << std::endl;
-            delete(i);
+            delete (i);
             i = nullptr;
         }
         else
@@ -58,7 +55,7 @@ public:
         }
     }
 
-    A& operator = (A& c)
+    A& operator=(A& c)
     {
         if (i == nullptr) i = new (int);
 
@@ -69,19 +66,19 @@ public:
         return *this;
     }
 
-    A& operator = (A&& m)
+    A& operator=(A&& m)
     {
         if (i != nullptr)
         {
             std::cout << this << " Delete before moving, *i = " << *i << ", i = " << i << std::endl;
-            delete(i);
+            delete (i);
         }
 
         i = m.i; // or i = std::move(m.i) for non pointers
 
         std::cout << this << " Move Assigment Operator, *i = " << *i << ", i = " << i << std::endl;
 
-        m.i = nullptr;// to avoid double deleting in destrctor
+        m.i = nullptr; // to avoid double deleting in destrctor
 
         return *this;
     }
@@ -201,4 +198,4 @@ void test(void)
 #endif
 }
 
-}
+} // namespace CopyMoveCtor

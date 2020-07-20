@@ -4,6 +4,5 @@
 namespace Macros {
 
 void test(void);
-
 }
 #endif

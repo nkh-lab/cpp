@@ -13,7 +13,7 @@ namespace Runnable {
 class IRunnable
 {
 public:
-    using Routine = std::function<void (const std::atomic_bool& request_to_stop)>;
+    using Routine = std::function<void(const std::atomic_bool& request_to_stop)>;
 
     virtual ~IRunnable() = default;
 
@@ -25,26 +25,19 @@ class Runnable : IRunnable
 {
 public:
     Runnable(Routine routine)
-        : m_routine {routine}
+        : m_routine{routine}
         , m_request_to_stop{false}
     {
-
     }
 
-    virtual ~Runnable()
-    {
-        stop();
-    }
+    virtual ~Runnable() { stop(); }
 
-    void start() override
-    {
-        m_thread = std::thread(m_routine, std::ref(m_request_to_stop));
-    }
+    void start() override { m_thread = std::thread(m_routine, std::ref(m_request_to_stop)); }
 
     void stop() override
     {
         m_request_to_stop = true;
-        if(m_thread.joinable()) m_thread.join();
+        if (m_thread.joinable()) m_thread.join();
     }
 
 private:
@@ -59,7 +52,6 @@ public:
     MyClass()
         : Runnable(std::bind(&MyClass::routine, this, _1))
     {
-
     }
 
 private:
@@ -67,7 +59,7 @@ private:
     {
         size_t i = 0;
 
-        for(;;)
+        for (;;)
         {
             if (request_to_stop) break;
             std::cout << __PRETTY_FUNCTION__ << request_to_stop << ", i = " << i << std::endl;
@@ -83,11 +75,10 @@ void test(void)
 
     MyClass mc;
 
-    Runnable r([](const std::atomic_bool& request_to_stop)
-    {
+    Runnable r([](const std::atomic_bool& request_to_stop) {
         size_t i = 0;
 
-        for(;;)
+        for (;;)
         {
             if (request_to_stop) break;
             std::cout << __PRETTY_FUNCTION__ << ", i = " << i << std::endl;
@@ -106,4 +97,4 @@ void test(void)
 
     std::this_thread::sleep_for(3s);
 }
-}
+} // namespace Runnable

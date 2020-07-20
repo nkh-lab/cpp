@@ -4,6 +4,5 @@
 namespace Basic {
 
 void test(void);
-
 }
 #endif

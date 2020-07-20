@@ -4,6 +4,5 @@
 namespace WeakPointer {
 
 void test(void);
-
 }
 #endif

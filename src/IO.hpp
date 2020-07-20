@@ -4,15 +4,12 @@
 #include <iostream>
 #include <vector>
 
-template<typename T>
-std::ostream& operator<< (std::ostream& out, const std::vector<T>& v);
+template <typename T>
+std::ostream& operator<<(std::ostream& out, const std::vector<T>& v);
 
 namespace IO {
 
 void test(void);
-
 }
-
-
 
 #endif

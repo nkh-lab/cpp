@@ -4,6 +4,5 @@
 namespace virtualdestructor {
 
 void test(void);
-
 }
 #endif

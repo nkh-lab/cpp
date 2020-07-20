@@ -4,7 +4,6 @@
 namespace Function {
 
 void test(void);
-
 }
 
 #endif

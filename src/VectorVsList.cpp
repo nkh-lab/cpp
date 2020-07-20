@@ -1,14 +1,14 @@
-#include <vector>
 #include <iostream>
+#include <vector>
 
-#include "VectorVsList.hpp"
 #include "IO.hpp" // to cout vector
+#include "VectorVsList.hpp"
 
 namespace VectorVsList {
 
 void test(void)
 {
-    std::vector<int> vi(5, 1);// 5 items inited by 1
+    std::vector<int> vi(5, 1); // 5 items inited by 1
 
     std::cout << "vi.capacity() = " << vi.capacity() << std::endl;
     std::cout << "vi.size() = " << vi.size() << std::endl;
@@ -37,4 +37,4 @@ void test(void)
      */
 }
 
-}
+} // namespace VectorVsList

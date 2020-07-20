@@ -1,7 +1,6 @@
 #include "Tricks.hpp"
 #include "clsA.hpp"
 
-
 namespace Tricks {
 
 /*
@@ -9,7 +8,7 @@ namespace Tricks {
  */
 void test_call_nonstatic_method(void)
 {
-    #define ANY_MEM_ADR 0x00
+#define ANY_MEM_ADR 0x00
 
     clsA* a = (clsA*)ANY_MEM_ADR;
 
@@ -21,4 +20,4 @@ void test(void)
     test_call_nonstatic_method();
 }
 
-}
+} // namespace Tricks

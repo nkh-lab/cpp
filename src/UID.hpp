@@ -6,7 +6,6 @@
 namespace UID {
 
 void test(void);
-
 }
 
 #endif

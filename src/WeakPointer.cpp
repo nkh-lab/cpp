@@ -1,6 +1,6 @@
+#include "WeakPointer.hpp"
 #include <iostream>
 #include <memory>
-#include "WeakPointer.hpp"
 
 namespace WeakPointer {
 
@@ -15,23 +15,21 @@ void test(void)
 
 class A
 {
-
 public:
-    A()  {std::cout << "A()" << std::endl;}
-    ~A() {std::cout << "~A()" << std::endl;}
+    A() { std::cout << "A()" << std::endl; }
+    ~A() { std::cout << "~A()" << std::endl; }
 
     std::shared_ptr<B> b;
-    //std::weak_ptr<B> b;
+    // std::weak_ptr<B> b;
 };
 
 class B
 {
-
 public:
-    B()  {std::cout << "B()" << std::endl;}
-    ~B() {std::cout << "~B()" << std::endl;}
+    B() { std::cout << "B()" << std::endl; }
+    ~B() { std::cout << "~B()" << std::endl; }
 
-    //std::shared_ptr<A> a;
+    // std::shared_ptr<A> a;
     std::weak_ptr<A> a;
 };
 
@@ -68,4 +66,4 @@ void test_cyclic()
      */
 }
 
-}
+} // namespace WeakPointer

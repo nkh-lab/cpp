@@ -14,8 +14,8 @@ public:
      */
 
     // overload operator with Template parameter
-    template<typename T>
-    A& operator << (T p)
+    template <typename T>
+    A& operator<<(T p)
     {
         std::cout << p;
 
@@ -23,9 +23,7 @@ public:
     }
 };
 
-
-
 void test(void);
 
-}
+} // namespace OverloadOperator
 #endif

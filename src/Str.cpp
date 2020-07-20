@@ -1,16 +1,15 @@
-#include <string>
-#include <iostream>
 #include "Str.hpp"
+#include <iostream>
+#include <string>
 
 namespace Str {
 
 void test_snprintf();
-std::string convertMacBytesToString(const unsigned char (&bytes) [6]);
+std::string convertMacBytesToString(const unsigned char (&bytes)[6]);
 
 void test(void)
 {
     test_snprintf();
-
 
     unsigned char mac[6] = {0xde, 0xad, 0xbe, 0xef, 0x20, 0x17};
 
@@ -30,7 +29,7 @@ void test_snprintf()
     int num = 12345;
     char buf[4] = {0};
 
-    std::snprintf(buf, 4, "%03d", num);// 4 - we need only 3 digits ( + /n) v.000
+    std::snprintf(buf, 4, "%03d", num); // 4 - we need only 3 digits ( + /n) v.000
 
     std::string s = "v." + std::string(buf);
 
@@ -43,13 +42,22 @@ void test_snprintf()
      */
 }
 
-std::string convertMacBytesToString(const unsigned char (&bytes) [6])
+std::string convertMacBytesToString(const unsigned char (&bytes)[6])
 {
     char buf1[18] = {0}; // 17 + /n
 
-    std::snprintf(buf1, 18, "%02x:%02x:%02x:%02x:%02x:%02x", bytes[0], bytes[1], bytes[2], bytes[3], bytes[4], bytes[5]);//
+    std::snprintf(
+        buf1,
+        18,
+        "%02x:%02x:%02x:%02x:%02x:%02x",
+        bytes[0],
+        bytes[1],
+        bytes[2],
+        bytes[3],
+        bytes[4],
+        bytes[5]); //
 
     return std::string(buf1);
 }
 
-}
+} // namespace Str

@@ -1,7 +1,7 @@
-#include <iostream>
-#include <limits>
-#include <limits.h>
 #include "Basic.hpp"
+#include <iostream>
+#include <limits.h>
+#include <limits>
 
 namespace Basic {
 
@@ -10,7 +10,7 @@ void test(void)
     int nums[5] = {1, 2, 3, 4, 5};
 
     // foreach
-    for(int i: nums)
+    for (int i : nums)
     {
         std::cout << i << std::endl;
     }
@@ -26,5 +26,4 @@ void test(void)
     std::cout << "u_int MAX = " << std::numeric_limits<unsigned int>::max() << std::endl;
 }
 
-}
-
+} // namespace Basic

@@ -1,9 +1,10 @@
-#include <iostream>
 #include "Containers.hpp"
-#include <set>
+#include <iostream>
 #include <map>
+#include <set>
 #include <unordered_map>
 
+// clang-format off
 /*                         Standard Container Summary
  *
  *********************************************************************************
@@ -50,6 +51,7 @@
  * unordered_multiset<T>    A multiset using a hashed lookup.
  *
  */
+// clang-format on
 
 namespace Containers {
 
@@ -66,14 +68,14 @@ void test_set(void)
 {
     typedef std::set<int> si;
 
-    si s {1, 2, 3};
+    si s{1, 2, 3};
 
     si::const_iterator i = s.begin();
 
     s.insert(i, 5); //
     s.insert(4);
 
-    for(int i: s)
+    for (int i : s)
     {
         std::cout << "i = " << i << std::endl;
     }
@@ -90,9 +92,9 @@ void test_set(void)
 
     typedef std::set<int, std::greater<int>> sig;
 
-    sig s1 {1, 2, 3};
+    sig s1{1, 2, 3};
 
-    for(int i: s1)
+    for (int i : s1)
     {
         std::cout << "i = " << i << std::endl;
     }
@@ -108,32 +110,21 @@ void test_set(void)
 
 void test_map(void)
 {
-    std::map<int,std::string> m {
-        {4, "four"},
-        {0, "zero"},
-        {1, "one"},
-        {2, "two"},
-        {3, "three"}
-    };
+    std::map<int, std::string> m{{4, "four"}, {0, "zero"}, {1, "one"}, {2, "two"}, {3, "three"}};
 
-    std::unordered_map<int,std::string> um {
-        {4, "four"},
-        {0, "zero"},
-        {1, "one"},
-        {2, "two"},
-        {3, "three"}
-    };
+    std::unordered_map<int, std::string> um{
+        {4, "four"}, {0, "zero"}, {1, "one"}, {2, "two"}, {3, "three"}};
 
     std::cout << "map<K,V>:" << std::endl;
 
-    for(auto i = m.begin(); i != m.end(); i++)
+    for (auto i = m.begin(); i != m.end(); i++)
     {
         std::cout << "Key: " << i->first << ", Value: " << i->second << std::endl;
     }
 
     std::cout << "unordered_map<K,V>:" << std::endl;
 
-    for(auto i = um.begin(); i != um.end(); i++)
+    for (auto i = um.begin(); i != um.end(); i++)
     {
         std::cout << "Key: " << i->first << ", Value: " << i->second << std::endl;
     }
@@ -157,4 +148,4 @@ void test_map(void)
     */
 }
 
-}
+} // namespace Containers

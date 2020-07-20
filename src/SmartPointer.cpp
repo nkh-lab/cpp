@@ -1,5 +1,5 @@
-#include <memory>
 #include "SmartPointer.hpp"
+#include <memory>
 #include "clsA.hpp"
 
 namespace SmartPointer {
@@ -9,7 +9,7 @@ void test_uptr(void);
 
 void test(void)
 {
-    //test_constructors();
+    // test_constructors();
     test_uptr();
 }
 
@@ -20,8 +20,8 @@ void test_constructors(void)
         clsA a((char*)"A");
         clsA* pA = new clsA((char*)"pA");
 
-        if(pA != nullptr);// to suppress warning: unused variable ‘pA’ [-Wunused-variable]
-
+        if (pA != nullptr)
+            ; // to suppress warning: unused variable ‘pA’ [-Wunused-variable]
 
         std::unique_ptr<clsA> upA(new clsA((char*)"upA"));
 
@@ -35,11 +35,10 @@ void test_constructors(void)
         // ! Object pointed by play pointer 'pA' was not destroyed
     }
 
-
     // constructor with no managed object
     std::unique_ptr<clsA> upANoM;
 
-    if(upANoM == nullptr)
+    if (upANoM == nullptr)
     {
         upANoM->testInline();
     }
@@ -83,4 +82,4 @@ void test_uptr(void)
     */
 }
 
-}
+} // namespace SmartPointer

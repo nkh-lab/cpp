@@ -1,17 +1,13 @@
-#include <iostream>
 #include "OverloadOperator.hpp"
-
+#include <iostream>
 
 namespace OverloadOperator {
-
-
-
 
 void test(void)
 {
     A a;
 
-    a<<1<<2<<3<<"www"<<2.5<<"\n";
+    a << 1 << 2 << 3 << "www" << 2.5 << "\n";
 
     /* output:
 
@@ -20,5 +16,4 @@ void test(void)
      */
 }
 
-
-}
+} // namespace OverloadOperator

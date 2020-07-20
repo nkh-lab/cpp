@@ -4,7 +4,6 @@
 namespace Tricks {
 
 void test(void);
-
 }
 
 #endif

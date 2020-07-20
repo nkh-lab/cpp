@@ -23,4 +23,4 @@ void test(void)
     */
 }
 
-}
+} // namespace PredefinedMacros

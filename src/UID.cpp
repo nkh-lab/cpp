@@ -27,5 +27,5 @@ void test(void)
 
     */
 }
-}
+} // namespace UID
 #endif
