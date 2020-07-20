@@ -44,7 +44,8 @@ int main(void)
     // SyncQueue::test();
     // MyForwardList::test();
     // Runnable::test();
-    Pimpl::test();
+    // Pimpl::test();
+    MyArray::test();
 
     return 0;
 }

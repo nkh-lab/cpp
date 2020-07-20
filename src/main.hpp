@@ -8,6 +8,7 @@
 #include "IO.hpp"
 #include "Literals.hpp"
 #include "Macros.hpp"
+#include "MyArray.hpp"
 #include "MyForwardList.hpp"
 #include "OverloadOperator.hpp"
 #include "Pimpl.hpp"
