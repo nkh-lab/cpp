@@ -1,5 +1,4 @@
 #include "OverloadOperator.hpp"
-#include <iostream>
 
 namespace OverloadOperator {
 

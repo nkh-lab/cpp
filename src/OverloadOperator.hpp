@@ -1,6 +1,8 @@
 #ifndef OVERLOADOPERATOR_HPP
 #define OVERLOADOPERATOR_HPP
 
+#include <iostream>
+
 namespace OverloadOperator {
 
 class A
