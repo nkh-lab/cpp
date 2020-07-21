@@ -12,6 +12,34 @@ struct Node
 };
 
 template <typename T>
+class MyForwardListIterator
+{
+public:
+    MyForwardListIterator(Node<T>* node)
+        : m_Node(node)
+    {
+    }
+
+    bool operator==(const MyForwardListIterator& other) const
+    {
+        if (this == &other)
+        {
+            return true;
+        }
+        return m_Node == other.m_Node;
+    }
+
+    bool operator!=(const MyForwardListIterator& other) const { return !operator==(other); }
+
+    T& operator*() { return m_Node->value; }
+
+    void operator++() { m_Node = m_Node->next; }
+
+private:
+    Node<T>* m_Node;
+};
+
+template <typename T>
 class MyForwardList
 {
 public:
@@ -45,6 +73,10 @@ public:
 
         m_Head = n;
     }
+
+    // for iterating
+    MyForwardListIterator<T> begin() { return MyForwardListIterator<T>(m_Head); }
+    MyForwardListIterator<T> end() { return MyForwardListIterator<T>(nullptr); }
 
     inline Node<T>* getHead() { return m_Head; }
 

@@ -42,10 +42,10 @@ int main(void)
     // UID::test();
     // Literals::test();
     // SyncQueue::test();
-    // MyForwardList::test();
+    MyForwardList::test();
     // Runnable::test();
     // Pimpl::test();
-    MyArray::test();
+    // MyArray::test();
 
     return 0;
 }
