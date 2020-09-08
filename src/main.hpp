@@ -20,6 +20,7 @@
 #include "SyncQueue.hpp"
 #include "Tricks.hpp"
 #include "UID.hpp"
+#include "UsingVsTypedef.hpp"
 #include "VectorVsList.hpp"
 #include "WeakPointer.hpp"
 #include "clsA.hpp"
