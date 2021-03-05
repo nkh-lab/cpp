@@ -15,7 +15,7 @@ public:
      * Because compilator needs to see implentation where it used.
      */
 
-    // overload operator with Template parameter
+    // internal operator overloading with Template parameter
     template <typename T>
     A& operator<<(T p)
     {
@@ -24,6 +24,15 @@ public:
         return *this;
     }
 };
+
+// external operator overloading
+template <typename T>
+A& operator+(A& a, T p)
+{
+    std::cout << p;
+
+    return a;
+}
 
 void test(void);
 
