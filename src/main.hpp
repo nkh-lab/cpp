@@ -4,6 +4,7 @@
 #include "Basic.hpp"
 #include "Containers.hpp"
 #include "CopyMoveCtor.hpp"
+#include "Exceptions.hpp"
 #include "Function.hpp"
 #include "IO.hpp"
 #include "Literals.hpp"

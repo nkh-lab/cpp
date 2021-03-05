@@ -40,13 +40,14 @@ int main(void)
     // Function::test();
     // Str::test();
     // UID::test();
-    UsingVsTypedef::test();
+    // UsingVsTypedef::test();
     // Literals::test();
     // SyncQueue::test();
     // MyForwardList::test();
     // Runnable::test();
     // Pimpl::test();
     // MyArray::test();
+    Exceptions::test();
 
     return 0;
 }
