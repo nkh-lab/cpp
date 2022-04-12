@@ -11,6 +11,7 @@
 #include "Macros.hpp"
 #include "MyArray.hpp"
 #include "MyForwardList.hpp"
+#include "Networking.hpp"
 #include "OverloadOperator.hpp"
 #include "Pimpl.hpp"
 #include "PredefinedMacros.hpp"

@@ -47,7 +47,8 @@ int main(void)
     // Runnable::test();
     // Pimpl::test();
     // MyArray::test();
-    Exceptions::test();
+    // Exceptions::test();
+    Networking::test();
 
     return 0;
 }
