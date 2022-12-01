@@ -1,3 +1,5 @@
+# QtCreator #
+
 # Files
 *.autosave
 *.cflags
@@ -13,3 +15,12 @@
 # Folders
 build/
 temp/
+
+# VisualStudioCode #
+
+# Files
+.project
+
+# Folders
+.settings/
+.vscode/

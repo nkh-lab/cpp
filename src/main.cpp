@@ -48,7 +48,8 @@ int main(void)
     // Pimpl::test();
     // MyArray::test();
     // Exceptions::test();
-    Networking::test();
+    // Networking::test();
+    AsyncToSync::test();
 
     return 0;
 }

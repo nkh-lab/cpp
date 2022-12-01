@@ -30,5 +30,6 @@
 #include "initialyzerlist.hpp"
 #include "manipulators.hpp"
 #include "virtualdestructor.hpp"
+#include "AsyncToSync.h"
 
 #endif
